@@ -2,232 +2,294 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>농부마실 | 링크</title>
-  <meta name="description" content="안심로컬푸드직매장 농부마실 링크 모음" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>농부마실 | 바로가기</title>
+  <meta name="description" content="농부마실 링크 및 매장 위치 안내" />
 
   <style>
-    *{ box-sizing:border-box; }
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#666666;
+      --card:#ffffff;
+      --border:#e9e9e9;
+      --shadow: 0 6px 24px rgba(0,0,0,.06);
+      --radius:18px;
+      --max: 740px;
+    }
 
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-      background:#ffffff;
-      color:#1f2937;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo",
+                   "Noto Sans KR", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
     }
 
     .wrap{
-      max-width:760px;
-      margin:0 auto;
-      padding:28px 18px 48px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 16px 60px;
     }
 
-    /* Header */
-    .header{
+    /* Top / Logo */
+    .top{
       display:flex;
-      gap:18px;
+      flex-direction:column;
       align-items:center;
-      padding:16px;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      background:#ffffff;
+      gap: 14px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      text-align:center;
     }
-
-    .avatar{
-      width:96px;
-      height:56px;
-      border-radius:12px;
-      background:#ffffff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:6px;
+    .logo{
+      width: 108px;
+      height: 108px;
+      border-radius: 22px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 10px;
     }
-
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-    }
-
-    h1{
-      font-size:20px;
-      margin:0 0 4px;
-    }
-
-    .sub{
+    .title{
       margin:0;
-      font-size:13px;
-      line-height:1.4;
-      color:#6b7280;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
     }
-
-    /* Sections */
-    .section-title{
-  margin:22px 4px 10px;
-  font-size:13px;
-  color:#6b7280;
-  text-align:center;
-}
-
+    .subtitle{
+      margin:0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
     /* Icon row */
     .icon-row{
       display:flex;
       justify-content:center;
-      gap:16px;
-      margin-bottom:8px;
+      align-items:center;
+      gap: 14px;
+      margin: 16px 0 22px;
+      flex-wrap:wrap;
     }
-
-    .icon-btn{
-      width:52px;
-      height:52px;
-      border-radius:14px;
-      border:1px solid #e5e7eb;
-      background:#ffffff;
-      display:flex;
+    .icon-link{
+      width: 52px;
+      height: 52px;
+      display:inline-flex;
       align-items:center;
       justify-content:center;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: var(--shadow);
       text-decoration:none;
-      transition:all .15s ease;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .icon-link:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+    }
+    .icon-link img{
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      display:block;
+    }
+    .icon-label{
+      position:absolute;
+      left:-9999px; /* screen-reader only */
     }
 
-    .icon-btn:hover{
-      border-color:#2e7d57;
-      transform: translateY(-2px);
+    /* Section title centered */
+    .section-title{
+      text-align:center;
+      margin: 22px 0 12px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
     }
 
-    .icon-btn img{
-      width:28px;
-      height:28px;
-      object-fit:contain;
+    /* Quick links (centered) */
+    .links{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin: 0 auto 26px;
+      max-width: 520px;
+    }
+    .btn{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center; /* 가운데정렬 */
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
     }
 
-    /* Grid cards */
+    /* Store block */
+    .store{
+      margin-top: 18px;
+    }
+    .store h3{
+      margin: 0 0 10px;
+      text-align:center; /* 가운데정렬 */
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+    }
+
+    /* 2x2 grid */
     .grid{
       display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    @media (min-width:640px){
-      .grid{
-        grid-template-columns:1fr 1fr;
-      }
-    }
-
-    .card{
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      background:#ffffff;
-      padding:14px;
-    }
-
-    .k{
-      font-size:12px;
-      color:#6b7280;
-      margin:0 0 6px;
-    }
-
-    .v{
-      font-size:14px;
-      margin:0;
-    }
-
-    /* Map */
-    .map-wrap{
-      margin-top:10px;
-      border-radius:12px;
+    /* Media cards with fixed rectangle aspect ratio */
+    .media{
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:#fff;
+      box-shadow: var(--shadow);
       overflow:hidden;
-      aspect-ratio:16/9;
-      border:1px solid #e5e7eb;
+      position:relative;
+      aspect-ratio: 16 / 10;  /* 직사각형 */
     }
-
-    iframe{
+    .media iframe,
+    .media img{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       border:0;
+      display:block;
+      object-fit: cover;
     }
 
-    .foot{
-      margin-top:26px;
+    /* Small helper text */
+    .hint{
       text-align:center;
-      font-size:12px;
-      color:#6b7280;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Mobile: single column */
+    @media (max-width: 560px){
+      .grid{ grid-template-columns: 1fr; }
+      .logo{ width: 96px; height: 96px; }
     }
   </style>
 </head>
 
 <body>
-<main class="wrap">
+  <main class="wrap">
+    <!-- TOP -->
+    <header class="top">
+      <!-- 로고 파일명: logo.png -->
+      <img class="logo" src="logo.png" alt="농부마실 로고" />
+      <h1 class="title">농부마실</h1>
+      <p class="subtitle">블로그 · 카카오톡 채널 · 매장 위치 안내</p>
+    </header>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="avatar">
-      <img src="logo.png" alt="농부마실 로고">
-    </div>
-    <div>
-      <h1>안심로컬푸드직매장 「농부마실」</h1>
-      <p class="sub">
-        운영주체: 농부마실 사회적협동조합<br>
-        사업자번호: 672-82-00121<br>
-        전화: 053-965-5249 · 이메일: fmasil@naver.com
+    <!-- ICON LINKS (가운데정렬, 일렬) -->
+    <nav class="icon-row" aria-label="SNS 바로가기">
+      <a class="icon-link" href="https://blog.naver.com/fmasil" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그">
+        <span class="icon-label">네이버 블로그</span>
+        <img src="blog.png" alt="" />
+      </a>
+
+      <a class="icon-link" href="https://pf.kakao.com/_Dxarxmj" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 채널">
+        <span class="icon-label">카카오톡 채널</span>
+        <img src="kakao.png" alt="" />
+      </a>
+
+      <!-- 인스타그램 아이콘/링크를 나중에 추가하실 때 아래 주석을 해제하고 주소만 넣으시면 됩니다.
+      <a class="icon-link" href="https://instagram.com/여기에주소" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
+        <span class="icon-label">인스타그램</span>
+        <img src="instagram.png" alt="" />
+      </a>
+      -->
+    </nav>
+
+    <!-- 바로가기 (가운데정렬) -->
+    <h2 class="section-title">바로가기</h2>
+    <section class="links" aria-label="바로가기 링크">
+      <a class="btn" href="https://blog.naver.com/fmasil" target="_blank" rel="noopener noreferrer">네이버 블로그</a>
+      <a class="btn" href="https://pf.kakao.com/_Dxarxmj" target="_blank" rel="noopener noreferrer">카카오톡 채널</a>
+      <!-- 필요하면 버튼 추가해서 쓰세요 -->
+      <!-- <a class="btn" href="https://example.com" target="_blank" rel="noopener noreferrer">홈페이지</a> -->
+    </section>
+
+    <!-- 매장 위치 -->
+    <h2 class="section-title">매장위치</h2>
+
+    <!-- 농부마실 안심점 -->
+    <section class="store" aria-label="농부마실 안심점">
+      <h3>농부마실 안심점</h3>
+
+      <div class="grid">
+        <!-- 지도 (iframe) -->
+        <div class="media" aria-label="안심점 지도">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3665404902104!2d128.73223997603367!3d35.864533419882626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bd1bdbb8fa1%3A0x5118e6e1ec7669e4!2z64aN67aA66eI7Iuk!5e0!3m2!1sko!2skr!4v1766383944671!5m2!1sko!2skr"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            aria-label="농부마실 안심점 구글지도"
+          ></iframe>
+        </div>
+
+        <!-- 사진 3장 -->
+        <div class="media"><img src="ansim1.jpg" alt="농부마실 안심점 사진 1" loading="lazy"></div>
+        <div class="media"><img src="ansim2.jpg" alt="농부마실 안심점 사진 2" loading="lazy"></div>
+        <div class="media"><img src="ansim3.jpg" alt="농부마실 안심점 사진 3" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- 농부마실 시지점 -->
+    <section class="store" aria-label="농부마실 시지점">
+      <h3>농부마실 시지점</h3>
+
+      <div class="grid">
+        <!-- 지도 (iframe) -->
+        <div class="media" aria-label="시지점 지도">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12937.805974546885!2d128.69264670604377!3d35.837931184940196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bfebb3099d3%3A0x8a1a9c33bc8b8e3c!2z64aN67aA66eI7IukIOyLnOyngOygkA!5e0!3m2!1sko!2skr!4v1766384021587!5m2!1sko!2skr"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            aria-label="농부마실 시지점 구글지도"
+          ></iframe>
+        </div>
+
+        <!-- 사진 3장 -->
+        <div class="media"><img src="siji1.jpg" alt="농부마실 시지점 사진 1" loading="lazy"></div>
+        <div class="media"><img src="siji2.jpg" alt="농부마실 시지점 사진 2" loading="lazy"></div>
+        <div class="media"><img src="siji3.jpg" alt="농부마실 시지점 사진 3" loading="lazy"></div>
+      </div>
+
+      <p class="hint">
+        사진/지도는 직사각형 비율로 자동 맞춰집니다. (모바일에서는 1열로 내려갑니다.)
       </p>
-    </div>
-  </header>
-
-  <!-- Icons -->
-  <div class="section-title">바로가기</div>
-  <div class="icon-row">
-    <a class="icon-btn" href="https://blog.naver.com/fmasil" target="_blank" aria-label="네이버 블로그">
-      <img src="blog.png" alt="블로그">
-    </a>
-    <a class="icon-btn" href="https://pf.kakao.com/_Dxarxmj" target="_blank" aria-label="카카오톡 채널">
-      <img src="kakao.png" alt="카카오톡 채널">
-    </a>
-    <a class="icon-btn" href="https://www.instagram.com/nongbumasil" target="_blank" aria-label="인스타그램">
-      <img src="instagram.png" alt="인스타그램">
-    </a>
-  </div>
-
-  <!-- Maps -->
-  <div class="section-title">매장위치</div>
-  <section class="grid">
-
-    <div class="card">
-      <p class="k">안심점</p>
-      <p class="v">대구광역시 동구 금강로 117</p>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3665404902104!2d128.73223997603367!3d35.864533419882626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bd1bdbb8fa1%3A0x5118e6e1ec7669e4!2z64aN67aA66eI7Iuk!5e0!3m2!1sko!2skr!4v1766383944671!5m2!1sko!2skr"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="card">
-      <p class="k">시지점</p>
-      <p class="v">대구광역시 수성구 달구벌대로650길 3</p>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12937.805974546885!2d128.69264670604377!3d35.837931184940196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bfebb3099d3%3A0x8a1a9c33bc8b8e3c!2z64aN67aA66eI7IukIOyLnOyngOygkA!5e0!3m2!1sko!2skr!4v1766384021587!5m2!1sko!2skr"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-
-  </section>
-
-  <div class="foot">
-    © 농부마실 · GitHub Pages
-  </div>
-
-</main>
+    </section>
+  </main>
 </body>
 </html>
-
-
-
-
