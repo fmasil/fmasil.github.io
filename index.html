@@ -8,86 +8,94 @@
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #ffffff;
-      color: #222;
+      color: #111;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 520px;
       margin: 0 auto;
-      padding: 24px 16px 80px;
+      padding: 24px 16px 40px;
     }
 
     /* ===== 상단 ===== */
     .header {
-      text-align: center;
-      margin-bottom: 40px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 32px;
     }
 
     .logo {
-      width: 220px;      /* 직사각형 유지 */
-      height: auto;
-      margin-bottom: 16px;
+      width: 120px;
+      height: auto; /* 직사각형 유지 */
     }
 
     .company-info {
       font-size: 14px;
       line-height: 1.6;
-      color: #555;
     }
 
-    /* ===== 바로가기 아이콘 ===== */
-    .quick-links {
+    /* ===== 바로가기 ===== */
+    .shortcut {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .shortcut-icons {
       display: flex;
       justify-content: center;
-      gap: 24px;
-      margin: 40px 0 60px;
+      gap: 20px;
     }
 
-    .quick-links a img {
-      width: 56px;
-      height: 56px;
+    .shortcut-icons img {
+      width: 48px;
+      height: 48px;
     }
 
-    /* ===== 섹션 공통 ===== */
-    .section {
-      margin-bottom: 100px; /* 섹션 간 간격 충분히 */
+    /* ===== 매장 섹션 ===== */
+    .store {
+      margin-bottom: 72px; /* 섹션 간격 충분히 */
     }
 
-    .section h2 {
-      font-size: 20px;
+    .store h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
       text-align: center;
-      margin-bottom: 20px;
     }
 
-    .address {
+    .store-address {
       text-align: center;
       font-size: 14px;
       color: #555;
       margin-bottom: 20px;
     }
 
-    /* ===== 지도 ===== */
-    .map {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      margin-bottom: 16px;
-    }
-
-    /* ===== 사진 2x2 ===== */
-    .photos {
+    /* ===== 2x2 그리드 ===== */
+    .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+      gap: 12px;
     }
 
-    .photos img {
+    .grid-item {
+      position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+      aspect-ratio: 4 / 3; /* 지도/사진 동일 비율 */
+      overflow: hidden;
       border-radius: 6px;
+      background: #f5f5f5;
+    }
+
+    .grid-item img,
+    .grid-item iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -95,67 +103,67 @@
 <body>
   <div class="container">
 
-    <!-- ===== 상단 ===== -->
-    <header class="header">
+    <!-- 상단 -->
+    <div class="header">
       <img src="logo.png" alt="농부마실 로고" class="logo" />
       <div class="company-info">
-        운영주체: 농부마실<br/>
-        사업자등록번호: 000-00-00000<br/>
-        전화: 000-0000-0000<br/>
-        이메일: example@fmasil.com
+        운영주체: 농부마실<br>
+        사업자등록번호: 000-00-00000<br>
+        전화: 053-000-0000<br>
+        이메일: fmasil@example.com
       </div>
-    </header>
+    </div>
 
-    <!-- ===== 바로가기 ===== -->
-    <nav class="quick-links">
-      <a href="https://blog.naver.com/fmasil" target="_blank">
-        <img src="blog.png" alt="네이버 블로그" />
-      </a>
-      <a href="https://pf.kakao.com/_Dxarxmj" target="_blank">
-        <img src="kakao.png" alt="카카오톡 채널" />
-      </a>
-      <a href="https://instagram.com" target="_blank">
-        <img src="instagram.png" alt="인스타그램" />
-      </a>
-    </nav>
+    <!-- 바로가기 -->
+    <div class="shortcut">
+      <div class="shortcut-icons">
+        <a href="https://blog.naver.com/fmasil" target="_blank">
+          <img src="blog.png" alt="네이버 블로그">
+        </a>
+        <a href="https://pf.kakao.com/_Dxarxmj" target="_blank">
+          <img src="kakao.png" alt="카카오톡 채널">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img src="instagram.png" alt="인스타그램">
+        </a>
+      </div>
+    </div>
 
-    <!-- ===== 안심점 ===== -->
-    <section class="section">
+    <!-- 안심점 -->
+    <div class="store">
       <h2>농부마실 안심점</h2>
-      <div class="address">대구광역시 동구 금강로 117</div>
+      <div class="store-address">대구광역시 동구 금강로 117</div>
 
-      <iframe
-        class="map"
-        src="https://www.google.com/maps?q=대구광역시 동구 금강로 117&output=embed"
-        loading="lazy">
-      </iframe>
-
-      <div class="photos">
-        <img src="ansim1.jpg" />
-        <img src="ansim2.jpg" />
-        <img src="ansim3.jpg" />
-        <div></div>
+      <div class="grid">
+        <div class="grid-item">
+          <iframe
+            src="https://www.google.com/maps?q=대구광역시 동구 금강로 117&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="grid-item"><img src="ansim1.jpg"></div>
+        <div class="grid-item"><img src="ansim2.jpg"></div>
+        <div class="grid-item"><img src="ansim3.jpg"></div>
       </div>
-    </section>
+    </div>
 
-    <!-- ===== 시지점 ===== -->
-    <section class="section">
+    <!-- 시지점 -->
+    <div class="store">
       <h2>농부마실 시지점</h2>
-      <div class="address">대구광역시 수성구 달구벌대로650길 3</div>
+      <div class="store-address">대구광역시 수성구 달구벌대로650길 3</div>
 
-      <iframe
-        class="map"
-        src="https://www.google.com/maps?q=대구광역시 수성구 달구벌대로650길 3&output=embed"
-        loading="lazy">
-      </iframe>
-
-      <div class="photos">
-        <img src="siji1.jpg" />
-        <img src="siji2.jpg" />
-        <img src="siji3.jpg" />
-        <div></div>
+      <div class="grid">
+        <div class="grid-item">
+          <iframe
+            src="https://www.google.com/maps?q=대구광역시 수성구 달구벌대로650길 3&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="grid-item"><img src="siji1.jpg"></div>
+        <div class="grid-item"><img src="siji2.jpg"></div>
+        <div class="grid-item"><img src="siji3.jpg"></div>
       </div>
-    </section>
+    </div>
 
   </div>
 </body>
