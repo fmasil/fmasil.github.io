@@ -2,75 +2,81 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>농부마실</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #ffffff;
-      color: #222;
+      color: #111;
+      text-align: center;
     }
 
     .container {
       max-width: 720px;
       margin: 0 auto;
-      padding: 24px 16px 80px;
+      padding: 32px 20px;
     }
 
-    /* ---------- 상단 ---------- */
+    /* 상단 */
     .logo {
-      text-align: center;
-      margin: 32px 0 48px;
+      width: 120px;
+      margin-bottom: 16px;
     }
 
-    .logo img {
-      max-width: 160px;
+    .company-info p {
+      margin: 4px 0;
+      font-size: 14px;
     }
 
-    /* ---------- 섹션 공통 ---------- */
-    section {
-      margin-bottom: 64px;
-    }
-
+    /* 바로가기 */
     h2 {
-      text-align: center;
+      margin: 48px 0 20px;
       font-size: 20px;
-      margin-bottom: 24px;
     }
 
-    /* ---------- 바로가기 ---------- */
-    .shortcut-icons {
+    .icon-links {
       display: flex;
       justify-content: center;
       gap: 24px;
     }
 
-    .shortcut-icons a img {
-      width: 56px;
-      height: 56px;
+    .icon-links img {
+      width: 48px;
+      height: 48px;
     }
 
-    /* ---------- 매장 ---------- */
+    /* 매장 섹션 */
+    .store-section {
+      margin-top: 80px;
+    }
+
+    .store-title {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+
     .store-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .store-grid iframe,
+    iframe,
     .store-grid img {
       width: 100%;
-      height: 180px;
+      aspect-ratio: 4 / 3;
+      border: 0;
       border-radius: 8px;
       object-fit: cover;
-      border: 0;
     }
 
-    /* 섹션 간격 강화 */
-    .store-section {
-      margin-bottom: 96px;
+    @media (max-width: 600px) {
+      .store-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -78,60 +84,52 @@
 <body>
   <div class="container">
 
-    <!-- 로고 -->
-    <div class="logo">
-      <img src="logo.png" alt="농부마실 로고">
+    <!-- 상단 -->
+    <img src="logo.png" alt="농부마실 로고" class="logo" />
+
+    <div class="company-info">
+      <p>운영주체: 농부마실</p>
+      <p>사업자등록번호: 672-82-00121</p>
+      <p>전화: 010-4369-5249</p>
+      <p>이메일: fmasil@naver.com</p>
     </div>
 
     <!-- 바로가기 -->
-    <section>
-      <h2>바로가기</h2>
-      <div class="shortcut-icons">
-        <a href="https://blog.naver.com/fmasil" target="_blank">
-          <img src="blog.png" alt="네이버 블로그">
-        </a>
-        <a href="https://pf.kakao.com/_Dxarxmj" target="_blank">
-          <img src="kakao.png" alt="카카오톡 채널">
-        </a>
-        <a href="https://instagram.com/" target="_blank">
-          <img src="instagram.png" alt="인스타그램">
-        </a>
-      </div>
-    </section>
+    <h2>바로가기</h2>
+    <div class="icon-links">
+      <a href="https://blog.naver.com/fmasil" target="_blank">
+        <img src="naver.png" alt="네이버 블로그">
+      </a>
+      <a href="https://pf.kakao.com/_Dxarxmj" target="_blank">
+        <img src="kakao.png" alt="카카오톡 채널">
+      </a>
+      <a href="https://instagram.com/" target="_blank">
+        <img src="instagram.png" alt="인스타그램">
+      </a>
+    </div>
 
-    <!-- 농부마실 안심점 -->
-    <section class="store-section">
-      <h2>농부마실 안심점</h2>
+    <!-- 안심점 -->
+    <div class="store-section">
+      <div class="store-title">농부마실 안심점</div>
       <div class="store-grid">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3665404902104!2d128.73223997603367!3d35.864533419882626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bd1bdbb8fa1%3A0x5118e6e1ec7669e4!2z64aN67aA66eI7Iuk!5e0!3m2!1sko!2skr!4v1766383944671!5m2!1sko!2skr"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-
-        <img src="ansim1.jpg" alt="안심점 사진 1">
-        <img src="ansim2.jpg" alt="안심점 사진 2">
-        <img src="ansim3.jpg" alt="안심점 사진 3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3665404902104!2d128.73223997603367!3d35.864533419882626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bd1bdbb8fa1%3A0x5118e6e1ec7669e4!5e0!3m2!1sko!2skr!4v1766383944671!5m2!1sko!2skr"></iframe>
+        <img src="ansim1.jpg" />
+        <img src="ansim2.jpg" />
+        <img src="ansim3.jpg" />
       </div>
-    </section>
+    </div>
 
-    <!-- 농부마실 시지점 -->
-    <section>
-      <h2>농부마실 시지점</h2>
+    <!-- 시지점 -->
+    <div class="store-section">
+      <div class="store-title">농부마실 시지점</div>
       <div class="store-grid">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12937.805974546885!2d128.69264670604377!3d35.837931184940196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bfebb3099d3%3A0x8a1a9c33bc8b8e3c!2z64aN67aA66eI7IukIOyLnOyngOygkA!5e0!3m2!1sko!2skr!4v1766384021587!5m2!1sko!2skr"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-
-        <img src="siji1.jpg" alt="시지점 사진 1">
-        <img src="siji2.jpg" alt="시지점 사진 2">
-        <img src="siji3.jpg" alt="시지점 사진 3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12937.805974546885!2d128.69264670604377!3d35.837931184940196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bfebb3099d3%3A0x8a1a9c33bc8b8e3c!5e0!3m2!1sko!2skr!4v1766384021587!5m2!1sko!2skr"></iframe>
+        <img src="siji1.jpg" />
+        <img src="siji2.jpg" />
+        <img src="siji3.jpg" />
       </div>
-    </section>
+    </div>
 
   </div>
 </body>
 </html>
-
