@@ -7,24 +7,14 @@
   <meta name="description" content="안심로컬푸드직매장 농부마실 링크 모음" />
 
   <style>
-    :root{
-      --bg:#0b0c10;
-      --card:#12141b;
-      --text:#eef1f6;
-      --muted:#a8b0bf;
-      --line:#232838;
-      --accent:#7aa2ff;
-      --radius:16px;
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background:#ffffff;
+      color:#1f2937;
     }
-
-    *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-  background:#ffffff;
-  color:#1f2937; /* 거의 검정 */
-}
 
     .wrap{
       max-width:760px;
@@ -32,33 +22,34 @@ body{
       padding:28px 18px 48px;
     }
 
-.header{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  padding:16px;
-  border:1px solid #e5e7eb;
-  background:#ffffff;
-  border-radius:16px;
-}
+    /* Header */
+    .header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      padding:16px;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      background:#ffffff;
+    }
 
-.avatar{
-  width:96px;
-  height:56px;
-  border-radius:12px;
-  background:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:6px;
-}
+    .avatar{
+      width:96px;
+      height:56px;
+      border-radius:12px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px;
+    }
 
-.avatar img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-    
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
     h1{
       font-size:20px;
       margin:0 0 4px;
@@ -66,23 +57,51 @@ body{
 
     .sub{
       margin:0;
-      color:var(--muted);
       font-size:13px;
       line-height:1.4;
+      color:#6b7280;
     }
 
+    /* Sections */
     .section-title{
-  margin:22px 4px 10px;
-  font-size:13px;
-  color:#6b7280;
-}
+      margin:22px 4px 10px;
+      font-size:13px;
+      color:#6b7280;
+    }
 
-.k{
-  font-size:12px;
-  color:#6b7280;
-  margin:0 0 6px;
-}
+    /* Icon row */
+    .icon-row{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:8px;
+    }
 
+    .icon-btn{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      border:1px solid #e5e7eb;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition:all .15s ease;
+    }
+
+    .icon-btn:hover{
+      border-color:#2e7d57;
+      transform: translateY(-2px);
+    }
+
+    .icon-btn img{
+      width:28px;
+      height:28px;
+      object-fit:contain;
+    }
+
+    /* Grid cards */
     .grid{
       display:grid;
       grid-template-columns:1fr;
@@ -96,26 +115,15 @@ body{
     }
 
     .card{
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  background:#ffffff;
-  padding:14px;
-}
-
-    a.card{
-      text-decoration:none;
-      color:var(--text);
-      transition: transform .08s ease, border-color .08s ease;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      background:#ffffff;
+      padding:14px;
     }
-
-    a.card:hover{
-  transform: translateY(-1px);
-  border-color:#2e7d57;
-}
 
     .k{
       font-size:12px;
-      color:var(--muted);
+      color:#6b7280;
       margin:0 0 6px;
     }
 
@@ -124,13 +132,14 @@ body{
       margin:0;
     }
 
+    /* Map */
     .map-wrap{
-  margin-top:10px;
-  border-radius:12px;
-  overflow:hidden;
-  aspect-ratio:16/9;
-  border:1px solid #e5e7eb;
-}
+      margin-top:10px;
+      border-radius:12px;
+      overflow:hidden;
+      aspect-ratio:16/9;
+      border:1px solid #e5e7eb;
+    }
 
     iframe{
       width:100%;
@@ -142,7 +151,7 @@ body{
       margin-top:26px;
       text-align:center;
       font-size:12px;
-      color:var(--muted);
+      color:#6b7280;
     }
   </style>
 </head>
@@ -150,13 +159,13 @@ body{
 <body>
 <main class="wrap">
 
-  <!-- 헤더 -->
+  <!-- Header -->
   <header class="header">
     <div class="avatar">
       <img src="logo.png" alt="농부마실 로고">
     </div>
     <div>
-      <h1>로컬푸드직매장 「농부마실」</h1>
+      <h1>안심로컬푸드직매장 「농부마실」</h1>
       <p class="sub">
         운영주체: 농부마실 사회적협동조합<br>
         사업자번호: 672-82-00121<br>
@@ -165,35 +174,27 @@ body{
     </div>
   </header>
 
-  <!-- 바로가기 -->
+  <!-- Icons -->
   <div class="section-title">바로가기</div>
-  <section class="grid">
-    <a class="card" href="https://blog.naver.com/" target="_blank" rel="noopener">
-      <p class="k">블로그</p>
-      <p class="v">농부마실 네이버 블로그</p>
+  <div class="icon-row">
+    <a class="icon-btn" href="https://blog.naver.com/" target="_blank" aria-label="네이버 블로그">
+      <img src="blog.jpg" alt="블로그">
     </a>
-
-    <a class="card" href="https://pf.kakao.com/" target="_blank" rel="noopener">
-      <p class="k">카카오톡 채널</p>
-      <p class="v">농부마실 카톡채널</p>
+    <a class="icon-btn" href="https://pf.kakao.com/" target="_blank" aria-label="카카오톡 채널">
+      <img src="kakao.jpg" alt="카카오톡 채널">
     </a>
-
-    <a class="card" href="https://www.instagram.com/nongbumasil" target="_blank" rel="noopener">
-      <p class="k">Instagram</p>
-      <p class="v">@nongbumasil</p>
+    <a class="icon-btn" href="https://www.instagram.com/nongbumasil" target="_blank" aria-label="인스타그램">
+      <img src="instagram.jpg" alt="인스타그램">
     </a>
-  </section>
+  </div>
 
-  <!-- 지도 -->
+  <!-- Maps -->
   <div class="section-title">지도</div>
-
   <section class="grid">
 
-    <!-- 안심점 -->
     <div class="card">
       <p class="k">안심점</p>
       <p class="v">대구광역시 동구 금강로 117</p>
-
       <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.3665404902104!2d128.73223997603367!3d35.864533419882626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bd1bdbb8fa1%3A0x5118e6e1ec7669e4!2z64aN67aA66eI7Iuk!5e0!3m2!1sko!2skr!4v1766383944671!5m2!1sko!2skr"
@@ -203,11 +204,9 @@ body{
       </div>
     </div>
 
-    <!-- 시지점 -->
     <div class="card">
       <p class="k">시지점</p>
       <p class="v">대구광역시 수성구 달구벌대로650길 3</p>
-
       <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12937.805974546885!2d128.69264670604377!3d35.837931184940196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660bfebb3099d3%3A0x8a1a9c33bc8b8e3c!2z64aN67aA66eI7IukIOyLnOyngOygkA!5e0!3m2!1sko!2skr!4v1766384021587!5m2!1sko!2skr"
@@ -226,5 +225,3 @@ body{
 </main>
 </body>
 </html>
-
-
