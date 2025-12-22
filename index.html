@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>농부마실 | 링크</title>
+  <meta name="description" content="안심로컬푸드직매장 농부마실 링크 모음" />
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#12141b; --text:#eef1f6; --muted:#a8b0bf; --line:#232838; --accent:#7aa2ff;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(122,162,255,.25), transparent 60%),
+                  radial-gradient(900px 700px at 110% 20%, rgba(255,122,211,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:760px; margin:0 auto; padding:28px 18px 48px;}
+    .header{
+      display:flex; gap:14px; align-items:center; padding:14px 14px; border:1px solid var(--line);
+      background: rgba(18,20,27,.75); backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+    }
+    .avatar{
+      width:56px; height:56px; border-radius:14px; background: linear-gradient(135deg, rgba(122,162,255,.9), rgba(255,122,211,.7));
+      display:flex; align-items:center; justify-content:center; font-weight:800;
+    }
+    h1{font-size:20px; margin:0 0 4px;}
+    .sub{margin:0; color:var(--muted); font-size:13px; line-height:1.35}
+    .grid{display:grid; grid-template-columns: 1fr; gap:10px; margin-top:14px;}
+    @media (min-width:640px){ .grid{ grid-template-columns: 1fr 1fr; } }
+    .card{
+      display:block; text-decoration:none; color:var(--text);
+      padding:14px 14px; border:1px solid var(--line); border-radius: var(--radius);
+      background: rgba(18,20,27,.75); backdrop-filter: blur(10px);
+      transition: transform .08s ease, border-color .08s ease;
+    }
+    .card:hover{ transform: translateY(-1px); border-color: rgba(122,162,255,.55); }
+    .k{font-size:12px; color:var(--muted); margin:0 0 6px;}
+    .v{font-size:14px; margin:0;}
+    .sectionTitle{margin:18px 2px 8px; font-size:13px; color:var(--muted);}
+    .pill{display:inline-flex; gap:8px; align-items:center; padding:10px 12px; border:1px solid var(--line);
+      border-radius:999px; background: rgba(18,20,27,.75); text-decoration:none; color:var(--text);
+    }
+    .row{display:flex; flex-wrap:wrap; gap:10px;}
+    .foot{margin-top:22px; color:var(--muted); font-size:12px; text-align:center;}
+    .mono{font-variant-numeric: tabular-nums;}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <div class="avatar">FM</div>
+      <div>
+        <h1>안심로컬푸드직매장 「농부마실」</h1>
+        <p class="sub">
+          운영주체: 농부마실 사회적협동조합<br/>
+          사업자번호: <span class="mono">672-82-00121</span><br/>
+          전화: <span class="mono">053-965-5249</span> · 이메일: <span class="mono">fmasil@naver.com</span>
+        </p>
+      </div>
+    </header>
+
+    <div class="sectionTitle">바로가기</div>
+    <section class="grid">
+      <a class="card" href="https://blog.naver.com/" target="_blank" rel="noopener">
+        <p class="k">블로그</p><p class="v">농부마실 블로그</p>
+      </a>
+      <a class="card" href="https://pf.kakao.com/" target="_blank" rel="noopener">
+        <p class="k">카카오톡 채널</p><p class="v">농부마실 카톡채널</p>
+      </a>
+      <a class="card" href="https://www.instagram.com/nongbumasil" target="_blank" rel="noopener">
+        <p class="k">Instagram</p><p class="v">@nongbumasil</p>
+      </a>
+      <a class="card" href="https://www.google.com/maps/search/?api=1&query=대구광역시%20동구%20금강로%20117" target="_blank" rel="noopener">
+        <p class="k">지도</p><p class="v">대구광역시 동구 금강로 117 (안심점)</p>
+      </a>
+      <a class="card" href="https://www.google.com/maps/search/?api=1&query=대구광역시%20수성구%20달구벌대로650길%203" target="_blank" rel="noopener">
+        <p class="k">지도</p><p class="v">대구광역시 수성구 달구벌대로650길 3 (시지점)</p>
+      </a>
+    </section>
+
+    <div class="sectionTitle">지점</div>
+    <section class="grid">
+      <div class="card" role="group" aria-label="안심점">
+        <p class="k">안심점</p>
+        <p class="v">영업일시 및 휴무일 안내</p>
+      </div>
+      <div class="card" role="group" aria-label="시지점">
+        <p class="k">시지점</p>
+        <p class="v">(&amp; 크린토피아 농부마실시지점)</p>
+      </div>
+    </section>
+
+    <div class="foot">© 농부마실 · GitHub Pages로 운영</div>
+  </main>
+</body>
+</html>
